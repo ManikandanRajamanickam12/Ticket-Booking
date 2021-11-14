@@ -3,8 +3,9 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins" , sans-serif;
+  font-family:sans-serif;
   text-decoration: none;
+  
 }
 body{
   min-height: 110vh;
@@ -16,6 +17,7 @@ body{
   background-image: url(https://www.esa.int/extension/pillars/design/pillars/images/nebula.jpg) ;
   background-repeat: no-repeat ;
   background-size: cover;
+  overflow-y: hidden;
 }
 .container{
   position: relative;

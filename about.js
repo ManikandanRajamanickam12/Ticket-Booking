@@ -1,22 +1,27 @@
 window.addEventListener('load', () => {
 
-    // Via Query parameters - GET
-    /* const params = (new URL(document.location)).searchParams;
-    const name = params.get('name');
-    const surname = params.get('surname'); */
 
-    // Via local Storage
-    /* const name = localStorage.getItem('NAME');
-    const surname = localStorage.getItem('SURNAME'); */
 
-    // const name = sessionStorage.getItem('NAME');
-    // const surname = sessionStorage.getItem('SURNAME');
+    console.log(localStorage.getItem("name"));
+    let value = localStorage.getItem("name");
 
-    // document.getElementById('result-name').innerHTML = name;
-    // document.getElementById('result-surname').innerHTML = surname;
-    //   document.getElementById("login").innerHTML = sessionStorage.getItem("loginName");
+    if (value == null) {
+        document.getElementById("login").innerHTML = "Login";
 
-    if (sessionStorage.getItem("loginName") != null || sessionStorage.getItem("loginName") == "LOGIN")
-        document.getElementById("login").innerHTML = "Logout";
+    }
+    else {
+
+        document.getElementById("login").innerHTML = value;
+    }
+
 
 })
+
+
+
+function login(e) {
+
+    localStorage.setItem("name", "Login");
+    window.location.reload();
+
+}

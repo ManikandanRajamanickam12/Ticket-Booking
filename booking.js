@@ -1,40 +1,40 @@
 window.addEventListener('load', () => {
 
-    // Via Query parameters - GET
-    /* const params = (new URL(document.location)).searchParams;
-    const name = params.get('name');
-    const surname = params.get('surname'); */
 
-    // Via local Storage
-    /* const name = localStorage.getItem('NAME');
-    const surname = localStorage.getItem('SURNAME'); */
 
-    // const name = sessionStorage.getItem('NAME');
-    // const surname = sessionStorage.getItem('SURNAME');
+    console.log(localStorage.getItem("name"));
+    let value = localStorage.getItem("name");
+    if (value == "Login") {
+        location.href = "C:/Users/DELL/Desktop/Ticket booking/login.html";
+    }
 
-    // document.getElementById('result-name').innerHTML = name;
-    // document.getElementById('result-surname').innerHTML = surname;
-    //   document.getElementById("login").innerHTML = sessionStorage.getItem("loginName");
+    document.getElementById("login").innerHTML = value;
 
-    if (sessionStorage.getItem("loginName") != null || sessionStorage.getItem("loginName") == "LOGIN")
-        document.getElementById("login").innerHTML = "Logout";
 
-    console.log(sessionStorage.getItem("loginName"));
 })
+
+
+
+function login(e) {
+
+    localStorage.setItem("name", "Login");
+    window.location.reload();
+
+}
 
 const container = document.querySelector('.container');
 const seats = document.querySelectorAll('.row .seat:not(.occupied');
 const count = document.getElementById('count');
 const total = document.getElementById('total');
-const movieSelect = document.getElementById('movie');
+const tSelect = document.getElementById('travel');
 
 populateUI();
-let ticketPrice = +movieSelect.value;
+let ticketPrice = tSelect.value;
 
 // Save selected movie index and price
-function setMovieData(movieIndex, moviePrice) {
-    localStorage.setItem('selectedMovieIndex', movieIndex);
-    localStorage.setItem('selectedMoviePrice', moviePrice);
+function settravelData(tIndex, tPrice) {
+    localStorage.setItem('selectedTravelIndex', tIndex);
+    localStorage.setItem('selectedTravelPrice', tPrice);
 }
 
 // update total and count
@@ -53,7 +53,11 @@ function updateSelectedCount() {
 
     count.innerText = selectedSeatsCount;
     total.innerText = selectedSeatsCount * ticketPrice;
+    localStorage.setItem("Prize", selectedSeatsCount * ticketPrice);
+
 }
+
+
 
 // get data from localstorage and populate ui
 function populateUI() {
@@ -66,17 +70,17 @@ function populateUI() {
         });
     }
 
-    const selectedMovieIndex = localStorage.getItem('selectedMovieIndex');
+    const selectedtIndex = localStorage.getItem('selectedTravelIndex');
 
-    if (selectedMovieIndex !== null) {
-        movieSelect.selectedIndex = selectedMovieIndex;
+    if (selectedtIndex !== null) {
+        tSelect.selectedIndex = selectedtIndex;
     }
 }
 
 // Movie select event
-movieSelect.addEventListener('change', (e) => {
+tSelect.addEventListener('change', (e) => {
     ticketPrice = +e.target.value;
-    setMovieData(e.target.selectedIndex, e.target.value);
+    settravelData(e.target.selectedIndex, e.target.value);
     updateSelectedCount();
 });
 
@@ -91,3 +95,4 @@ container.addEventListener('click', (e) => {
 
 // intial count and total
 updateSelectedCount();
+

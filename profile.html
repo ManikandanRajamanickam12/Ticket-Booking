@@ -24,7 +24,7 @@
       <li><a href="contact.html">Contact</a></li>
       <li><a href="profile.html" class="active">Profile</a></li>
       <li><a href="card.html">Add To Cart</a></li>
-      <li><a href="login.html"><span id="login">Login</span></a></li>
+      <li><a href="login.html"><span id="login" onclick="login(event)">Login</span></a></li>
 
     </ul>
   </nav>
@@ -41,15 +41,15 @@
       <h2>SPACE_X PROFILE</h2>
       <div class="profile-name">
         <label>Name:</label>
-        <span>Manikandan R</span>
+        <span id="session-name"></span>
       </div>
       <div class="profile-email">
         <label>Email:</label>
-        <span>vlmmani2000@gmail.com</span>
+        <span id="session-email"></span>
       </div>
       <div class="profile-pwd">
         <label>Password:</label>
-        <span>Mani12122000@</span>
+        <span id="session-pwd"></span>
       </div>
 
     </div>

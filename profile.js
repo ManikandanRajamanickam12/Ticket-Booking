@@ -1,4 +1,4 @@
-//declearing html elements
+
 
 const imgDiv = document.querySelector('.profile-pic-div');
 const img = document.querySelector('#photo');
@@ -6,49 +6,88 @@ const file = document.querySelector('#file');
 const uploadBtn = document.querySelector('#uploadBtn');
 
 
+
+
+
 window.addEventListener('load', () => {
     if (sessionStorage.getItem("loginName") != null || sessionStorage.getItem("loginName") == "LOGIN")
         document.getElementById("login").innerHTML = "Logout";
 })
 
-//if user hover on img div 
 
 
 imgDiv.addEventListener('mouseenter', function () {
     uploadBtn.style.display = "block";
 });
 
-//if we hover out from img div
+
 
 imgDiv.addEventListener('mouseleave', function () {
     uploadBtn.style.display = "none";
 });
 
-//lets work for image showing functionality when we choose an image to upload
 
-//when we choose a foto to upload
 
 file.addEventListener('change', function () {
-    //this refers to file
+
     const choosedFile = this.files[0];
 
     if (choosedFile) {
 
-        const reader = new FileReader(); //FileReader is a predefined function of JS
+        const reader = new FileReader();
 
         reader.addEventListener('load', function () {
+            sessionStorage.getItem("recent-image", reader.result);
             img.setAttribute('src', reader.result);
         });
 
         reader.readAsDataURL(choosedFile);
 
-        //Allright is done
 
-        //please like the video
-        //comment if have any issue related to vide & also rate my work in comment section
 
-        //And aslo please subscribe for more tutorial like this
-
-        //thanks for watching
     }
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    const recentimgurl = sessionStorage.getItem("recent-image");
+    if (recentimgurl) {
+        document.querySelector("#photo").setAttribute("src", recentimgurl)
+    }
+});
+
+
+window.addEventListener('load', () => {
+
+
+    console.log(localStorage.getItem("name"));
+    let value = localStorage.getItem("name");
+    if (value == "Login") {
+        location.href = "C:/Users/DELL/Desktop/Ticket booking/login.html";
+    }
+
+    document.getElementById("login").innerHTML = value;
+
+
+    const email = sessionStorage.getItem("loginemail");
+    const name = sessionStorage.getItem("loginName");
+    const pwd = sessionStorage.getItem("loginpwd");
+
+    document.getElementById("session-email").innerHTML = email;
+    document.getElementById("session-pwd").innerHTML = pwd;
+    document.getElementById("session-name").innerHTML = name;
+
+
+
+})
+
+function login(e) {
+
+    localStorage.setItem("name", "Login");
+    window.location.reload();
+
+}
+
+
+
+
+

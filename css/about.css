@@ -1,7 +1,7 @@
 *{
     margin: 0;
     padding: 0;
-    font-family: "Open Sans",sans-serif;
+    font-family:sans-serif;
     box-sizing: border-box;
     overflow-y: hidden;
     text-decoration: none;
@@ -103,6 +103,7 @@ nav{
   font-size: 35px;
   line-height: 80px;
   padding: 0 100px;
+ 
   font-weight: bold;
   }
   nav ul{

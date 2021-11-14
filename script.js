@@ -29,16 +29,19 @@ const signUp = e => {
 }
 
 function signIn(e) {
-    sessionStorage.setItem("loginName", "LOGI");
 
     e.preventDefault();
 
     let email = document.getElementById('email').value, pwd = document.getElementById('pwd').value;
     let name;
+    let session_email;
+    let session_pwd;
     let formData = JSON.parse(localStorage.getItem('formData')) || [];
     let exist = formData.length &&
         JSON.parse(localStorage.getItem('formData')).some(data => {
             name = data.fname;
+            session_email = data.email;
+            session_pwd = data.pwd;
             return data.email.toLowerCase() == email && data.pwd.toLowerCase() == pwd
         });
 
@@ -48,13 +51,19 @@ function signIn(e) {
     //let expires = "expires=" + d.toUTCString();
     //document.cookie = name;
     sessionStorage.setItem("loginName", name);
-    //document.cookie = "username=${fname}";
+    sessionStorage.setItem("loginemail", session_email);
+    sessionStorage.setItem("loginpwd", session_pwd);
+
+    localStorage.setItem("name", "Logout");
+
+
 
     if (!exist) {
         alert("Incorrect login credentials");
     }
     else {
         location.href = "C:/Users/DELL/Desktop/Ticket booking/index.html";
+
     }
 
 }
