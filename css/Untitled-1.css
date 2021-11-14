@@ -1,0 +1,225 @@
+
+
+* {
+    box-sizing: border-box;
+    text-decoration: none;
+    overflow-y: hidden;
+  }
+  
+  body {
+    background-image: url(https://www.aerospace-technology.com/wp-content/uploads/sites/15/2021/02/shutterstock_720989659-1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+   font-family: sans-serif;
+  
+  }
+  
+  .movie-container {
+   margin-top: 20px;
+   margin-left: -55px;
+   margin-bottom: 45px;
+  
+  
+  }
+  
+  .movie-container select {
+    background-color: #fff;
+    border: 0;
+    border-radius: 5px;
+    font-size: 14px;
+    margin-left: 10px;
+    padding: 5px 15px 5px 15px;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+  }
+  
+  .container {
+    perspective: 1000px;
+    margin-bottom: 30px;
+  }
+  
+  .seat {
+    background-color: #444451;
+    height: 18px;
+    width:23px;
+    margin: 3px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+  
+  .seat.selected {
+    background-color: #6feaf6;
+  }
+  
+  .seat.occupied {
+    background-color: #fff;
+  }
+  
+  .seat:nth-of-type(2) {
+    margin-right: 18px;
+  }
+  
+  .seat:nth-last-of-type(2) {
+    margin-left: 18px;
+  }
+  
+  .seat:not(.occupied):hover {
+    cursor: pointer;
+    transform: scale(1.2);
+  }
+  
+  .showcase .seat:not(.occupied):hover {
+    cursor: default;
+    transform: scale(1);
+  }
+  
+  .showcase {
+    background-color: rgb(125, 128, 128);
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: white;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+  }
+  
+  .showcase li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 10px;
+  }
+  
+  .showcase li small {
+    margin-left: 10px;
+  }
+  
+  .row {
+    display: flex;
+  }
+  
+  .screen {
+    border: 2px solid white;
+    padding: 40px ;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(125, 128, 128);
+    margin-top: 40px;
+  }
+  
+  p.text {
+  margin-top: 100px;
+  
+  }
+  
+  p.text span {
+    color: #6feaf6;
+  }
+  
+  nav{
+    width: 100%;
+  height: 80px;
+  background:turquoise;
+  position: fixed;
+  top: 0;
+  left: 0;
+  
+  }
+  label.logo{
+  color: rgb(5, 55, 61);
+  font-size: 35px;
+  line-height: 80px;
+  padding: 0 100px;
+  font-weight: bold;
+  }
+  nav ul{
+  float: right;
+  margin-right: 20px;
+  margin-top: -3px;
+  }
+  
+  nav ul li {
+  display: inline-block;
+  line-height: 80px;
+  margin: 0 5px;
+  
+  }
+  nav ul li a{
+  color: white;
+  font-size:17px;
+  text-transform: uppercase;
+  padding: 7px 13px;
+  border-radius: 3px;
+  
+  }
+  a:hover{
+  background: rgb(33, 65, 61);
+  transition: 0.5s;
+  }
+  .checkbtn{
+  font-size: 30px;
+  color: white;
+  float: right;
+  line-height:80px;
+  margin-right: 40px;
+  cursor: pointer;
+  display: none;
+  }
+  #check{
+  display: none;
+  }
+  
+  @media (max-width:952px) {
+    .container{
+      z-index: -2;
+    }
+  
+  lable.logo{
+     font-size: 30px;
+     padding-left: 50px;
+  }
+  nav ul li a{
+     font-size: 16px;
+  }
+  }
+  @media (max-width:858px) {
+  
+  .checkbtn{
+     display: block;
+  }
+  ul{
+     position: fixed;
+     width: 100%;
+     height: 100vh;
+     background:rgb(101, 121, 118);
+     top: 70px;
+     left:-100%;
+     text-align:center;
+     transition: all .6s ;
+     z-index: 20;
+  }
+  nav ul li{
+  display: block;
+  margin: 50px 0;
+  line-height: 30px;
+  }
+  nav ul li a{
+     font-size: 20px;
+  }
+  a:hover{
+     background:  #2c3e50;
+     color:white;
+  }
+  #check:checked ~  ul {
+     left: 0;
+   }
+  }
+  

@@ -1,0 +1,297 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+body{
+    font-family: sans-serif;
+}
+.main{
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    
+}
+.contact-info{
+    width: 50%;
+    height: 100vh;
+    background:rgb(5, 55, 61) ; 
+   padding-left: 100px;
+  
+}
+.contact-info h3{
+    padding: 125px;
+    text-align: center;
+    font-weight: bold;
+    color:rgb(0, 0, 0);
+    font-size: 40px;
+    margin-top: 20px;
+    font-family: sans-serif;
+}
+.contact-info .infobox div{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.contact-info .infobox div span{
+    min-width: 60px;
+    height: 60px;
+    
+    background: rgb(166, 236, 236);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5ek;
+    border-radius: 50%;
+    margin-right: 15px;
+    
+}
+.contact-info .infobox div p{
+    color: white;
+    font-size: 30px;
+}
+.contact-info .infobox div a{
+    color: white;
+    text-decoration: none;
+    font-size: 30px;
+}
+.sci{
+    margin-top: 140px;
+    display: flex;
+}
+.sci p{
+    font-size: 20px;
+    color: rgb(0, 0, 0);
+    padding-right: 20px;
+    font-weight: bold;
+}
+.sci li{
+    list-style: none;
+    margin-right: 55px;   
+}
+.sci li a{
+    background-color:rgb(166, 236, 236) ;
+    padding: 20px;
+    color:rgb(5, 55, 61) ;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;  
+    
+}
+.sci li a:hover{
+  color: rgb(223, 196, 196);
+  transition: .5s;  
+}
+.contact-map{
+    width: 50%;
+    height: 100vh;
+}
+
+.contact-map iframe{
+     width: 100%;
+     height:100%;
+}
+
+
+nav{
+    width: 100%;
+height: 80px;
+ background:turquoise;
+ position: fixed;
+ top: 0;
+ left: 0;
+
+}
+label.logo{
+ color: rgb(5, 55, 61);
+ font-size: 35px;
+ line-height: 80px;
+ padding: 0 100px;
+ font-weight: bold;
+}
+nav ul{
+ float: right;
+ margin-right: 20px;
+ margin-top: -1px;
+}
+
+nav ul li {
+ display: inline-block;
+ line-height: 80px;
+ margin: 0 5px;
+
+}
+nav ul li a{
+ color: white;
+ font-size:17px;
+ text-transform: uppercase;
+ padding: 7px 13px;
+ border-radius: 3px;
+
+}
+a.active,a:hover{
+ background: rgb(33, 65, 61);
+ transition: 0.5s;
+}
+.checkbtn{
+ font-size: 30px;
+ color: white;
+ float: right;
+ line-height:80px;
+ margin-right: 40px;
+ cursor: pointer;
+ display: none;
+}
+#check{
+ display: none;
+}
+
+@media (max-width:952px) {
+ 
+ lable.logo{
+     font-size: 30px;
+     padding-left: 50px;
+ }
+ nav ul li a{
+     font-size: 16px;
+ }
+}
+@media (max-width:858px) {
+ 
+ .checkbtn{
+     display: block;
+ }
+ nav ul{
+     position: fixed;
+     width: 100%;
+     height: 100vh;
+     background:rgb(101, 121, 118);
+     top: 70px;
+     left:-100%;
+     text-align:center;
+     transition: all .6s ;
+ }
+ nav ul li{
+ display: block;
+ margin: 50px 0;
+ line-height: 30px;
+ }
+ nav ul li a{
+     font-size: 20px;
+ }
+ a.active,a:hover{
+     background:  #2c3e50;
+     color:white;
+ }
+ #check:checked ~  ul {
+     left: 0;
+   }
+}
+@media (max-width:864px) {
+    .main{
+        display: flex;
+        flex-direction: column;
+    }
+    .contact-info{
+        width: 100%;
+        height: 70vh;
+        background:rgb(5, 55, 61) ; 
+       padding-left: 20px;
+       
+      
+    }
+    .contact-info h3{
+        padding: 85px;
+        text-align: center;
+        color:rgb(0, 0, 0);
+        font-size: 30px;
+        
+        font-family: sans-serif;
+    }
+    .contact-info .infobox div{
+        display: flex;
+        align-items: center;
+    }
+    .contact-info .infobox div span{
+        min-width: 40px;
+        height: 40px;
+        
+        background: rgb(166, 236, 236);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1ek;
+        border-radius: 50%;
+        margin-right: 15px;
+        
+    }
+    .contact-info .infobox div p{
+        color: white;
+        font-size: 25px;
+    }
+    .contact-info .infobox div p{
+        color: white;
+        font-size: 25px;
+    }
+    .contact-info .infobox div a{
+        color: white;
+        text-decoration: none;
+        font-size: 25px;
+    }
+    ul.sci{
+      margin-top: -1px;
+      padding-top: 25px;
+        
+    }
+    ul.sci p{
+        font-size: 20px;
+        color: rgb(0, 0, 0);
+     
+        font-weight: bold;
+    }
+    .sci li{
+        list-style: none;
+         
+    }
+    .sci li a{
+        background-color:rgb(166, 236, 236) ;
+      padding: 13px;
+      
+        color:rgb(5, 55, 61) ;
+        justify-content: center;
+        align-items: center;
+        border-radius: 80%;  
+        
+    }
+    .contact-map{
+        width: 100%;
+        height: 30vh;
+    }
+    .contact-map iframe{
+        width: 100%;
+        height:100%;
+   } 
+   
+    
+    }
+    
+   
+  
+   
+    
+    
+   
+    
+    /* .sci li a:hover{
+      color: rgb(223, 196, 196);
+      transition: .5s;  
+    }
+    .contact-map{
+        width: 50%;
+        height: 100vh;
+    }
+    
+    .contact-map iframe{
+         width: 100%;
+         height:100%;
+    } */
